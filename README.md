@@ -1,16 +1,15 @@
-# Weekly-C-
+# Weekly-C++
 
 
-
-Derleyici nedir?
+### Derleyici nedir?
 
 Derleyici, yüksek seviye bir programlama dilinde (high-level programming language) yazılmış bir kaynak kodun, başka bir hedef dile veya bilgisayarın/işlemcinin anlayabileceği makine diline tercümesini yapan bir programdır.
 
-Linker nedir?
+### Linker nedir?
 
 Bir derleyici tarafından üretilmiş olan kodları bağlayarak işletim sisteminin çalıştırabileceği tek bir kod üreten programdır.Object dosyasına çevrilen bir veya birden çok dosyanın birbirleri ile ilişkilendirmesi ve tek bir çalıştırılabilir dosyaya örneğin (explorer.exe) çevrilmesini sağlayan yazılımdır.
 
-Process ve thread arasındaki fark nedir?
+### Process ve thread arasındaki fark nedir?
 
 Process yani diğer bi anlamıyla işlem bir işletim sistemi üzerinde herhangi bir dil ile kodlanmış ve bir compiler (derleyici) ile derlenmiş ve daha sonra hafızaya yüklenerek işlemcide çalıştırılan programlara verilen isimdir.
           Genel anlamda her program bir process olarak düşünülebilir, ancak bir programın birden fazla processi olabileceği gibi her process, yeni başka processlerde üretebilir. İşletim sisteminin tasarımına göre değişmekle birlikte işlemler (process) kendi adres alanında çalışırlar ve hafıza koruması uygulanır. Bu sayede bir işlemin, başka işlemlerin bilgisine erişmesi engellenmiştir.
@@ -18,12 +17,12 @@ Process yani diğer bi anlamıyla işlem bir işletim sistemi üzerinde herhangi
 Thread (iplik) kavramı, aynı process ortamında birden fazla iş yürütme imkanı sağlar. Bir process’in çalışmaya başlaması ile birlikte bir thread oluşturulur ve bu process içerisinde birden fazla iplik oluşturulabilir. Yaratılan iplikler aynı adres uzayında koşarlar. Her ipliğin kendine has program sayacı, saklayıcıları, yığını ve durumu(yok edilme, askıya alınma, önceliğinin değiştirilmesi) vardır. Bir iplikteki değişkeni aynı işlem tarafından üretilmiş bütün iplikler değiştirebilir veya okuyabilir.
           Threadler iş parçacıkları olup, çoklu görevlerde senkranizasyon sağlamak için kullanılır. Her threadin farklı bir görevi vardır. Eğer bu threadler aynı anda aynı bölgeye girerse hatalar meydana gelebilir.
 
-Constructor ve destructor nedir?
+### Constructor ve destructor nedir?
 
 Constructor (Yapılandırıcı) fonksiyon, kendi sınıfı içerisindeki üyeleri veya oluşturduğu nesnenin ilk çıkış sahnesini oluşturan fonksiyonlardır.Nesneler, genelde yaratılırken ilk değer atamalarını kendi kurucu fonksiyonları sayesinde yaparlar.Böyle bir kural şart değildir, ancak nesne yönelimli programlama dilleri üzerinde kod yazan programcılar genelde bu yaklaşım ile sınıflarını tasarlarlar.Bakıldığı zaman programın optimizasyonu açısından da constructor fonksiyonları çok yararlıdır.
 Destructor (Yıkıcı) olarak adlandırılan fonksiyonlar ise, Constructor fonksiyonunun yaptığı işin tersini yaparlar, yani görevi biten nesneyi yok ederler.Bir sınıfın (class) üyesi olan bir değişken (orn:string tipli) görevini noktaladığı durumda ~destructor() fonksiyonu otomatik cağrılarak, üzerinde caliştığı nesneyi devre dışı bırakır. C++ programlama dili içerisinde Destructorlar bulunurken, Java dilinde bu fonksiyonlar kaldırılmıştır.Nedeni ise, programlama zafiyeti açısından eğer iyi tasarlanmazsa, bu fonksiyonlar programa ciddi zararlar verebilirler.
 
-Statik Nedir?
+### Statik Nedir?
 
 Program işlediği sürece bellekte kendisine belirli bir yer ayrılan değişken türüdür. Program çalışma süresince sadece bir kere tanımlanır. Örneğin bir fonksiyon içerisindeki bir statik değişken fonksiyon ne kadar çaırılırsa çağırılsın bir kez tanımlanır.
 
@@ -47,7 +46,7 @@ int main()
 
 }
 
-Auto Nedir?
+### Auto Nedir?
 
 Auto deyimi eğer değişken tanımlanırken değer alıyorsa kullanılır. Örneğin bir double değişkene 5.5 değerini vereceksek derleyici tanımlayacağımız değişkenin zaten double olduğunu çözebilir.
 
@@ -67,7 +66,7 @@ auto topla(int x, int y)
 
 }
 
-Bool neden 8 bit uzunluğunda?
+### Bool neden 8 bit uzunluğunda?
 
 Çünkü her C++ veri tipi adreslenebilir olmalıdır.
 
@@ -116,7 +115,7 @@ double const PI { 3.14 }; // Calisir ama onerilmez.
 
 const int X; //Derleyici hatasi.
 
-Constexpr nedir?
+### Constexpr nedir?
 
 C ve C++ içinde makrolar, derlemeden önce ön işlemci tarafından işlenen belirteçlerdir. Bir makro belirtecinin her örneği, dosya derlenmeden önce tanımlı değeri veya ifadesiyle değiştirilir. Makrolar genellikle derleme zamanı sabit değerlerini tanımlamak için C stili programlamada kullanılır. Ancak makrolar hataya neden olur ve hata ayıklaması zordur. Modern C++ içinde, derleme zamanı constexpr sabitleri için değişkenleri tercih edersiniz:
 
@@ -176,13 +175,13 @@ Bir Yıkıcı fonksiyon tanımlanırken;
     Yıkıcı fonksiyon parametre alamamaktadır.
     Yıkıcı fonksiyonunu geri dönüş tipi yoktur.
 
-pragma once nedir?
+### pragma once nedir?
 
 Microsoft visual studio’nun en kullanışlı pragma direktiflerinden. bir header file‘in sadece tek sefer include edilmesini saglar. boylece gcc ortamlarindaki #ifndef #define #endif gibi standart girizgahlara gerek kalmaz.
 
 Microsoft compiler’ında gayet çalışırken, “#pragma once” içeren kodunuzu başka compiler ile derlemeye çalıştığınızda hata verebilir. Microsoft visual studio, yeni eklenen header dosyasına default olarak koyar bu direktifi.
 
-Constructor nedir?
+### Constructor nedir?
 
 Construct -> inşa etmek, kurmak
 Constructor -> inşa eden, kurucu
@@ -198,7 +197,7 @@ Bilinmesi gerekenler:
     Constructor const OLAMAZ.
     Constructor OVERLOAD edilebilir.
 
-Constructor static üye fonksiyon mu yoksa non-static üye fonksiyon mu?
+### Constructor static üye fonksiyon mu yoksa non-static üye fonksiyon mu?
 
 Constructor non-static üye fonksiyonudur. Çünkü nesnemize ilk değer vereceğine göre büyük olasıklıkla veri elemanlarına değerler yerleştirecek. Veri elemanlarına değer yerleştirmesi için nesnemizin adresini alması lazım. Nesnemizin adresini alması demek this göstericisinin olması demek.
 
@@ -206,26 +205,26 @@ Constructor sınıfın public bölümünde olmak zorunda mı?
 
 Hayır böyle bir zorunluluk yok. Eğer sınıfın private bölümüne koyarsak, derleyici tarafından çağırıldığı zaman yine sentaks hatası olur. Hatırlarsak clientlar sınıfın sadece public bölümüne erişebiliyorlardı. Hata olan constructor’ın private olması değil, private bir fonksiyonun çağırılması. Constructor’ı private bölümüne yazacağımız özel bazı senaryolar var. (Örnek: Singleton Pattern)
 
-Singleton Pattern Nedir?
+### Singleton Pattern Nedir?
 
 Singleton(tek nesne) tasarım kalıbı, bir sınıfın tek bir örneğini almak için kullanılır.Amaç oluşturulan nesneye global erişim noktası sağlamaktır. Sistem çalıştığı sürece ikinci bir örnek oluşturulmaz, böylelikle istenen nesnenin tek bir defa oluşturulması garanti altına alınacaktır. Singleton nesneler ilk çağırıldıklarında bir kere oluşturulurlar ve sonraki istekler bu nesne üzerinden karşılanır.
 
 Bir sakıncası nesne ömrü : Singleton, nesnenin nasıl silineceğini söylemez. Bellek yönetimi sağlayan dillerde sadece Singleton kalıbı nesneyi serbest bırakabilir (deallocate), çünkü sınıf nesneye private bir referans tutar. Diğer sınıflar nesneyi silebilir, fakat bu yöntem Singleton sınıfı içerisinde boşta kalan referansa neden olur.
 
-non-static ne demek?
+### non-static ne demek?
 
     static keywordu olmayan, yani this göstericisine sahip olan demek
     Derleyicinin yazdığı constructor ın static olma imkanı yok, private olma imkanı yok
 
-Dinamik Bellek Yönetimi Nedir?
+### Dinamik Bellek Yönetimi Nedir?
 
 Dinamik bellek yönetimi temelde bir prosesin adres alanının (address space) çalışma zamanındaki ihtiyaçlarına göre genişletilebilmesi ve istenildiğinde sisteme geri verilebilmesidir.
 
-C++ dinamik dizi nedir?
+### C++ dinamik dizi nedir?
 
 Dizi boyutunun programın çalışması sırasında artması veya azalmasıdır. C ve C++ programlama dillerinde bellek yönetimi derleme ve çalışma zamanı olmak üzere iki farklı zamanda olur.
 
-Stack ve Heap farkı nedir?
+### Stack ve Heap farkı nedir?
 
 Stack Memory, işlemcilerin register bilgilerinin tutulduğu yerdir. Burada programınızla ilgili bilgiler (örneğin; lokal değişkenler, referans değişkenler vs) yer almaktadır. Bu memory, geliştirici tarafından değil, compiler tarafından yönetilir. Stack’teki bilgiler kodunuzun derleme aşamasında, direk bellek içine yerleştirildiği için erişimi oldukça hızlıdır.
 
@@ -257,17 +256,17 @@ Heap, Stack ile karşılaştırıldığında oldukça yavaştır. Çalışma zam
 
 Öncelikle stack bir LIFO (Last In First Out) data structures’dır. Somutlaştırmak adına LIFO’yu şöyle düşünebiliriz:
 
-reference nedir?
+### reference nedir?
 
 Bir değişkene erişilmesini sağlayan Pointer benzeri veri tipleridir. Pointer değeri değişkenin adresine işaret eden bir sayı değeriyken, referans, derleyici için sadece bir değişkene ait takma addır. Yani bir değişkene ait referans tanımladığınızda onu başka bir değişken için kullanamazsınız. Standart C++, referansların gerçeklenmesi için özel bir yöntem dayatmaz ama modern derleyiciler bu yetkinliği gerçeklemek için temelde Pointer kullanırlar.
 
-lvalue nedir?
+### lvalue nedir?
 
 Locator value. Bir adrese sahip değişkenlere denir. Bu tip değişkenlerin/değerlerin içeriği değiştirilebilir. Bellekte bir yer tutan ve adresi temin edilen değer/ifade (“expression”).
 
 lvalue reference: lvalue değerine ait reference tipidir.
 
-rvalue nedir?
+### rvalue nedir?
 
 Reusable/Disposable value. Programın akışı içinde çıkan ara değerlerdir. Ara değer olarak oluşturulduklarından içerikleri direkt olarak programcı kontrolünde değildir. Programcı kontrolüne geçmeleri için bir lvalue’ya atanmaları gerekmektedir.
 
@@ -279,15 +278,15 @@ C++ da metotlara parametre geçirme yöntemlerine baktığımız zaman elimizde 
 
     “Pass by reference” : Yani parametrelerin referans (&) operatörü kullanılarak metotlara geçirilmesi. Bu durumda ilgili parametrelerin sadece adresinin (kendisi değil) kopyası tutulur. Bu bir nebze işaretçi kullanılarak parametrelerin geçirilmesine benzer ve metot içerisinde yapılan değişiklikler ilgili parametreleri değiştirir. Parametrenin kendisi kopyalanmaz.
 
-decltype nedir?
+### decltype nedir?
 
 Türden bağımsız (generic) olarak yazılan kodlarda, bazı durumlarda bir ifadenin türünün derleme zamanında derleyici tarafından yapılacak bir çıkarımla anlaşılması gerekiyor. decltype c++11 ile gelen bir özellik. Temel olarak değişkenin tipini belirlemeye yarıyor fakat auto gibi değil. auto kelimesi oldukça sınırlıdır. python “type(değişken)” ifadesi gibi çalışıyor.
 
-typeid nedir?
+### typeid nedir?
 
 typeid ile decltype anahtar kelimeleri birbirlerine benzer olsalar da, çok temel farklılıkları var. typeid, ilgili tipin çalışma zamanında (RTTI mekanizması) tipini öğrenmeye yönelik olsa da, declype ile derleme zamanında bu tipe ilişkin işlemleri gerçekleştirebiliyorsunuz. typeid’ye biraz mesafeli yaklaşılmakta, özellikle aviyonik ya da emniyet kritik yazılımlar geliştiriyorsanız, uzak da durmalısınız (keza çoğu zaman bu özellik kapatılmakta).
 
-Code Review nedir? Neden Önemlidir?
+### Code Review nedir? Neden Önemlidir?
 
 Kod kalitesini artırmak için bir çok yol izlenebilir; unit test, continuous integration, continuous deployment, agile methodology etc. ancak en önemli yollardan biri code review dır. Bazen kaliteli diyebileceğimiz kodlar yazmaya çalışsak bile öyle anlar geliyor ki proje müdürünüz bir anda gelip bu feature’u bugün yetiştirmemiz gerekiyor deyip spaghetti code yazma süreciniz başlıyor. Bu gibi durumlar hep olacak ancak daha sonrasında geriye dönüp yazmış olduğunuz kodu review-refactoring etmemiz gerekmekte. Yada normal akışında geliştirme yapıyor olsak bile teknik olarak bilgili birisi (genelde takım liderleri) yapmış olduğumuz geliştirmelere bir göz atıp ondan sonra master branch’ine commit/checkin yapıyor olmamız gerekir.
 
@@ -301,7 +300,7 @@ Hem review edecek olan kişi hemde developer için checklist‘inizin olması ö
 
 Bu gibi checklist’ler yaparak süreci daha kolay hale getirebiliriz. 
 
-CI/CD Nedir?
+### CI/CD Nedir?
 
 CI/CD, istediğiniz zaman sürdürülebilir bir şekilde yayınlayabileceğiniz yazılım geliştirme yoludur.
 
@@ -318,7 +317,7 @@ Sisteminizi tekrar eden sürümleri destekleyecek şekilde tasarlayın: Sorunlar
 
 Agile: Çeviklik olarak anılanAgile, süreç engellerini ortadan kaldırmaya ve daha yakın işbirliğine odaklanıyor. Agile, değişimin sürekliliğini vurgular ve yazılım üreticileri olarak yüksek kaliteli yazılımı başarılı bir şekilde tasarlamak, geliştirmek ve sunmak için ihtiyaç duyduğumuz şeyleri genellikle eksik olarak bildiğinizi düşünür. Sürekli entegrasyon/Sürekli teslimat (CI / CD): Sürekli entegrasyon (CI), bir ekibin üyelerinin çalışmalarını entegre ettikleri bir yazılım mühendisliği uygulamasıdır.
 
-C++ override nedir?
+### C++ override nedir?
 
 Overriding bir sınıfa ait bir metodun, o sınıftan türetilmiş bir sınıf içerisinde aynı isimli bir metod tanımlanarak, bu metodun temel sınıftaki metodun yerine geçirmeye denir. Bu işlem,bir metodun aynı sınıftan türetilmiş farklı sınıflarda farklı işlere yaramasını sağlar.
 
@@ -347,7 +346,7 @@ Hangi fonksiyonun çağrılmış olduğunu saptamak derleme zamanında yapılan 
 
 Aynı isimli fonksiyonlar gereksiz yere tanımlanmamalıdır. Fonksiyon yüklemesinin ana amacı özünde aynı işi yapan ancak kodları farklı fonksiyonları aynı isim altında soyutlamaktır. Birden fazla fonksiyonun aynı ismi taşıması kullanıcı kodların işini kolaylaştırmaya yöneliktir. Farklı işler gören fonksiyonların, aynı ismi taşıması kodun okunmasını zorlaştırır. (Necati Ergin)
 
-(. . .) argumanı (ellipsis) nedir?
+### (. . .) argumanı (ellipsis) nedir?
 
 Argüman sayısının değişken olmasını istediğimiz fonksiyonlarda kullanırız.
 
@@ -359,7 +358,7 @@ Function pointer nedir?
 
 Bir fonksiyon adresi başka bir fonksiyona argüman olarak gönderilebilir. Bir fonksiyonun geri dönüş değeri bir fonksiyon adresi olabilir. Elemanları fonksiyon adresleri olan diziler oluşturulabilir. Fonksiyon adresleri C ve C++ dillerinde en sık kullanılan araçlar arasındadır.
 
-GELECEK KONULAR
+### GELECEK KONULAR
 
 abstract factory nedir?
 
@@ -369,10 +368,8 @@ Dönüştüren kurucu fonksiyon “(conversion constructor)
 
 (Tür dönüştürme operatör fonksiyonları (type-cast operator functions)
 
+
+          
 Kaynaklar
-
-Kaynak 1
-
 GeekForGeeks
-
-NErgin
+NecatiErgin
