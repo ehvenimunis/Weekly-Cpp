@@ -411,6 +411,44 @@ Burada strcmp ifadesinin türü, geri dönüş değeri int parametreleri (const 
 ``` int (*)(const char *, const char *)```  
 
 türüne dönüştürülür.  
+
+``` strcmp(s1, s2) ```
+
+gibi bir fonksiyon çağrısının oluşturduğu ifade ise int türdendir.
+
+Fonksiyonu çağırma iki farklı şekilde yapılabilir:
+
+```
+pf()
+
+biçiminde, ya da
+
+(*pf)()
+
+```
+
+
+```
+
+#include <stdio.h>void func(void(*fp)(void))
+{
+    printf("func cagrildi\n");
+    fp();
+    //
+}void f()
+{
+    printf("f cagrildi\n");
+    //
+}int main()
+{
+    func(f);
+}
+
+```
+
+Yukarıdaki kodda func fonksiyonunun parametre değişkeni bir fonksiyon göstericisi. main fonksiyon içinde func fonksiyonu f fonksiyonunun adresi ile çağrılıyor. func fonksiyonu da adresini aldığı fonksiyonu çağırıyor. Buna popüler olarak ```callback``` deniyor.
+
+
           
 
 ### GELECEK KONULAR
