@@ -26,6 +26,7 @@ Destructor (Yıkıcı) olarak adlandırılan fonksiyonlar ise, Constructor fonks
 
 Program işlediği sürece bellekte kendisine belirli bir yer ayrılan değişken türüdür. Program çalışma süresince sadece bir kere tanımlanır. Örneğin bir fonksiyon içerisindeki bir statik değişken fonksiyon ne kadar çaırılırsa çağırılsın bir kez tanımlanır.
 
+```
 #include <iostream>
 
 void ArttirVeYazdir()
@@ -45,19 +46,21 @@ int main()
     ArttirVeYazdir();
 
 }
+```
 
 ### Auto Nedir?
 
 Auto deyimi eğer değişken tanımlanırken değer alıyorsa kullanılır. Örneğin bir double değişkene 5.5 değerini vereceksek derleyici tanımlayacağımız değişkenin zaten double olduğunu çözebilir.
 
-double x{ 5.6 };  //Derleyici 5.6'nin double literal oldugunu biliyor.
+```double x{ 5.6 };  //Derleyici 5.6'nin double literal oldugunu biliyor.```
 
-auto x { 5.6 }; //Yukaridakiyle ayni is yapilir. Derleyici x'in double oldugunu biliyor.
+```auto x { 5.6 }; //Yukaridakiyle ayni is yapilir. Derleyici x'in double oldugunu biliyor.```
 
 C++14 ile birlikte auto deyimi fonksiyon dönüş tipi olarak kullanılabilir hale geldi.
 
 Örneğin:
 
+```
 auto topla(int x, int y)
 
 {
@@ -65,6 +68,7 @@ auto topla(int x, int y)
    return x + y;
 
 }
+```
 
 ### Bool neden 8 bit uzunluğunda?
 
@@ -80,6 +84,7 @@ Literaller kodda direkt olarak yazılan ifadelerdir. Sabitlerdir çünkü değer
 
 Örneğin:
 
+```
 bool AmIAlive = true; // true bir literaldir ve değeri değiştirilemez.
 
 int yas = 20; // 20 bir int literaldir ve degistirilemez.
@@ -91,16 +96,19 @@ char A = 'A' // Char literal
 double PI = 3.14159 // 3.14159 bir double literaldir.
 
 double avogadro = 6.02e23;
+```
 
 Sayısal sabitler bazı eklere sahip olabilirler. Bu ekler o sabitin türünü belirler. İsteğe bağlıdırlar. Derleyici genellikle hangi sabiti kullanmak istediğinizi anlayabilir.
 
 İkilik sayı sabitlerinin başına “0b”, sekizliklerin başına “0” ve on altılıkların başına “0x” koyulur.
 
+```
 int y = 0b01011001;
 
 int x = 0765;
 
 int f = 0xFF;
+```
 
 Sembolik sabit nedir?
 
@@ -110,22 +118,27 @@ Const değerlere ilk değer ataması yapmak zorunludur.
 
 Örneğin:
 
+```
 const double gravity { 9.8 }; // Dogrudur ve tercih edilir.
 double const PI { 3.14 }; // Calisir ama onerilmez.
 
 const int X; //Derleyici hatasi.
+```
 
 ### Constexpr nedir?
 
 C ve C++ içinde makrolar, derlemeden önce ön işlemci tarafından işlenen belirteçlerdir. Bir makro belirtecinin her örneği, dosya derlenmeden önce tanımlı değeri veya ifadesiyle değiştirilir. Makrolar genellikle derleme zamanı sabit değerlerini tanımlamak için C stili programlamada kullanılır. Ancak makrolar hataya neden olur ve hata ayıklaması zordur. Modern C++ içinde, derleme zamanı constexpr sabitleri için değişkenleri tercih edersiniz:
 
+```
 #define SIZE 10 // C-style
 constexpr int size = 10; // modern C++
+```
 
 Constexpr değişkenler const değişkenler gibi sabitlerdir ama constexpr değişkenler derleme zamanı çözülmelidirler.
 
 örneğin:
 
+```
 constexpr pi(3.14); /* Derleyici derleme sirasinda pi'ye atanacak degeri cözebildi. Sikinti yok */
 
 int x;
@@ -133,25 +146,32 @@ int x;
 std::cin >> x;
 
 constexpr int foo(x) /* Derleme hatasi. Derleme sirasinda atanacak deger bilinmiyor. */
+```
 
 C de çok kullanılan önişlemci sabitleri C++ da yazarken çok önerilmez. Çünkü dilin mekaniklerine aykırı bir kullanımı vardır ve yer yer ikiliklere sebep olabilir.
 
+```
 #define SABIT 100
 
 int x = SABIT;
+```
 
 ### Tür dönüşümü nedir?
 
 Bir veri tipinin başka bir veri tipine çevrilmesidir. Bazı tip dönüşümleri veri kaybına sebep olurken bazılarını da yapmak mümkün değildir. C++ üstü kapalı (implicit) birçok dönüşümü otomatik olarak yapabilir. Örneğin, aşağıda int bir veri long bir veriye dönüştürülmüş.
 
+```
 int myInt{12};
 long myLong;
 myLong = myInt;
+```
 
 ### static _cast nedir?
 
+```
 char c = 'a';
 std::cout << static_cast<int>(c) << std::endl; // a değil 97 yazdırır.
+```
 
 Statik dönüşümün en iyi yanı, derleme zamanı kontrol yapmasıdır. Böylece mantıksız olabilecek işlemlerden kaçınılır.
 
@@ -234,6 +254,7 @@ Eğer program esnasında boyutları bildirilmiş değişmez bir değer kullanıy
 
 Örnek kod parçacığımıza gelecek olursak:
 
+```
 void fonksiyon()
 {
   //Henuz kullanmadigimiz pointer(Su an stack'de duruyor).  
@@ -249,7 +270,7 @@ void fonksiyon()
       duruyor.
 }  //<- Burada bir bellek problemi oluşacak, araba_ismi değişkenini
         free(araba_ismi) yazılması gerekiyordu
-
+```
 Kullanacağınız yerin boyutunu tam olarak biliyorsanız Stack‘i kullanmak sizin için uygun olacaktır.
 
 Heap, Stack ile karşılaştırıldığında oldukça yavaştır. Çalışma zamanında oluşturulur. Doğru kullanılmaması durumunda bellek sorunları yaratır. Bilgisayarda RAM’de tutulur. Tıpkı Stack gibi.
@@ -329,14 +350,18 @@ int func(int, int);
 
 Aynı isimde biden fazla fonksiyon tanımlamak isteyebiliriz. Çünkü aynı isimli fonsiyonların farklı imzaları (bu fonksiyonların parametrik yapıları birbirinden farklı olur, fonksiyonların parametre değişkenlerinin sayısı ile her bir parametre değişkeninin türü) vardır.
 
+```
 // const and function overloading  example
 void func(int *ptr);		//1
 void func(const int *ptr);	//2
+```
 
 İşlevlerin parametreleri gösterici ya da referans değilse bildirimde kullanılan const anahtar sözcüğü bir anlam farklılığı yaratmaz:
 
+```
 void func(int x);	//1
 void func(const int x);	//2  yeniden bildirim (function redeclaration)
+```
 
 Yukarıdaki bildirimler bir fonksiyon yüklemesi oluşturmuyor. Derleyici ikinci deyimi bir “yeniden bildirim” (function redeclaration) kabul eder. Eğer her iki fonksiyon da tanımlansaydı sentaks hatası oluşurdu.
 
@@ -350,7 +375,9 @@ Aynı isimli fonksiyonlar gereksiz yere tanımlanmamalıdır. Fonksiyon yükleme
 
 Argüman sayısının değişken olmasını istediğimiz fonksiyonlarda kullanırız.
 
-```void func(int, ...);```
+```
+void func(int, ...); 
+```
 
 Fonksiyonun son parametresinin üç nokta atomu (ellipsis) ile belirtildiğini görüyorsunuz. Bu fonksiyonun birinci parametresine bir argüman gönderilmek zorundadır. variadic parametre (ellipsis) için istenilen sayıda argüman gönderilebilir. Yani func fonksiyonu bir ya da birden fazla argüman ile çağrılabilir. Ayrıca Değişken Şablonlar (“Variadic Templates”) da mevcuttur.
 
@@ -359,8 +386,10 @@ Fonksiyonun son parametresinin üç nokta atomu (ellipsis) ile belirtildiğini g
 Bir fonksiyon adresi başka bir fonksiyona argüman olarak gönderilebilir. Bir fonksiyonun geri dönüş değeri bir fonksiyon adresi olabilir. Elemanları fonksiyon adresleri olan diziler oluşturulabilir. Fonksiyon adresleri C ve C++ dillerinde en sık kullanılan araçlar arasındadır.
 Bir fonsiyonun adresini asterix (&) kullanarak gösterebiliriz. 
 
-```int func(int, int);
-int (*fptr)(int, int);```
+```
+int func(int, int);
+int (*fptr)(int, int);
+```
           
 ```fptr``` değişkenine ```func``` fonksiyonunun adresi ilk değer olarak verilebilir ya da atanabilir
 
