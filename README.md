@@ -308,8 +308,8 @@ CI/CD, istediğiniz zaman sürdürülebilir bir şekilde yayınlayabileceğiniz 
 
 Sürekli Entegrasyon, CI/CD için bir ön koşuldur ve şunları gerektirir:
 
-    Geliştiriciler, değişikliklerini günde birçok kez ana kod dalında birleştirir.
-    Her kod, otomatik bir kod oluşturma ve test sırasını tetiklemek için birleştirilir. Geliştiriciler ideal olarak sonuçları 10 dakikadan daha kısa sürede alır, böylece çalışmalarına odaklanmaya devam edebilirler.
+Geliştiriciler, değişikliklerini günde birçok kez ana kod dalında birleştirir.
+Her kod, otomatik bir kod oluşturma ve test sırasını tetiklemek için birleştirilir. Geliştiriciler ideal olarak sonuçları 10 dakikadan daha kısa sürede alır, böylece çalışmalarına odaklanmaya devam edebilirler.
 
 Sürekli Teslimat uygulamasında ise çoğu durum manuel olarak gerçekleşse de kod değişiklikleri sürekli olarak devreye alınır.
 
@@ -357,6 +357,35 @@ Fonksiyonun son parametresinin üç nokta atomu (ellipsis) ile belirtildiğini g
 Function pointer nedir?
 
 Bir fonksiyon adresi başka bir fonksiyona argüman olarak gönderilebilir. Bir fonksiyonun geri dönüş değeri bir fonksiyon adresi olabilir. Elemanları fonksiyon adresleri olan diziler oluşturulabilir. Fonksiyon adresleri C ve C++ dillerinde en sık kullanılan araçlar arasındadır.
+Bir fonsiyonun adresini asterix (&) kullanarak gösterebiliriz. 
+
+int func(int, int);
+int (*fptr)(int, int);
+          
+fptr değişkenine func fonksiyonunun adresi ilk değer olarak verilebilir ya da atanabilir
+
+fptr = &func;
+
+Fonksiyon isimlerinin derleyici tarafından fonksiyonların adreslerine dönüştürülmesinden faydalanarak bu atama deyimi aşağıdaki gibi de yazılabilirdi:
+
+fptr = func;
+
+          
+func(10, 20)
+
+Burada fonksiyon çağrı operatörünün terimi func adresidir. Operatör, func adresinde bulunan kodu, yani func fonksiyonunun kodunu çalıştırır. Fonksiyon çağrı operatörünün ürettiği değer çağrılan fonksiyonun geri dönüş değeridir. Örneğin:
+
+int result = strcmp(s1, s2);
+
+Burada strcmp ifadesinin türü, geri dönüş değeri int parametreleri (const char *, const char *) olan bir fonksiyon adresidir. Yani strcmp ifadesi
+
+int (*)(const char *, const char *)
+
+türüne dönüştürülür.
+          
+          
+          
+          
 
 ### GELECEK KONULAR
 
