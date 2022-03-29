@@ -72,7 +72,7 @@ auto topla(int x, int y)
 
 Tek bir bit için nasıl bir işaretçi yaratırsınız? Yapamazsın. Ancak bir bayt için bir işaretçi oluşturabilirsiniz. Bu nedenle, C++’daki bir boole, tipik olarak bayt boyutundadır. (Daha büyük de olabilir. Bu uygulamaya bağlı. Ana şey, adreslenebilir olması gerektiğidir, bu nedenle hiçbir C++ veri türü bir bayttan küçük olamaz)
 
-Kaç tür sabit vardır?
+### Kaç tür sabit vardır?
 
 İki tür sabit vardır. Literaller ve sembolik sabitler.
 
@@ -140,7 +140,7 @@ C de çok kullanılan önişlemci sabitleri C++ da yazarken çok önerilmez. Ç�
 
 int x = SABIT;
 
-Tür dönüşümü nedir?
+### Tür dönüşümü nedir?
 
 Bir veri tipinin başka bir veri tipine çevrilmesidir. Bazı tip dönüşümleri veri kaybına sebep olurken bazılarını da yapmak mümkün değildir. C++ üstü kapalı (implicit) birçok dönüşümü otomatik olarak yapabilir. Örneğin, aşağıda int bir veri long bir veriye dönüştürülmüş.
 
@@ -148,7 +148,7 @@ int myInt{12};
 long myLong;
 myLong = myInt;
 
-static _cast nedir?
+### static _cast nedir?
 
 char c = 'a';
 std::cout << static_cast<int>(c) << std::endl; // a değil 97 yazdırır.
@@ -201,7 +201,7 @@ Bilinmesi gerekenler:
 
 Constructor non-static üye fonksiyonudur. Çünkü nesnemize ilk değer vereceğine göre büyük olasıklıkla veri elemanlarına değerler yerleştirecek. Veri elemanlarına değer yerleştirmesi için nesnemizin adresini alması lazım. Nesnemizin adresini alması demek this göstericisinin olması demek.
 
-Constructor sınıfın public bölümünde olmak zorunda mı?
+### Constructor sınıfın public bölümünde olmak zorunda mı?
 
 Hayır böyle bir zorunluluk yok. Eğer sınıfın private bölümüne koyarsak, derleyici tarafından çağırıldığı zaman yine sentaks hatası olur. Hatırlarsak clientlar sınıfın sadece public bölümüne erişebiliyorlardı. Hata olan constructor’ın private olması değil, private bir fonksiyonun çağırılması. Constructor’ı private bölümüne yazacağımız özel bazı senaryolar var. (Örnek: Singleton Pattern)
 
@@ -350,41 +350,38 @@ Aynı isimli fonksiyonlar gereksiz yere tanımlanmamalıdır. Fonksiyon yükleme
 
 Argüman sayısının değişken olmasını istediğimiz fonksiyonlarda kullanırız.
 
-void func(int, ...);
+```void func(int, ...);```
 
 Fonksiyonun son parametresinin üç nokta atomu (ellipsis) ile belirtildiğini görüyorsunuz. Bu fonksiyonun birinci parametresine bir argüman gönderilmek zorundadır. variadic parametre (ellipsis) için istenilen sayıda argüman gönderilebilir. Yani func fonksiyonu bir ya da birden fazla argüman ile çağrılabilir. Ayrıca Değişken Şablonlar (“Variadic Templates”) da mevcuttur.
 
-Function pointer nedir?
+### Function pointer nedir?
 
 Bir fonksiyon adresi başka bir fonksiyona argüman olarak gönderilebilir. Bir fonksiyonun geri dönüş değeri bir fonksiyon adresi olabilir. Elemanları fonksiyon adresleri olan diziler oluşturulabilir. Fonksiyon adresleri C ve C++ dillerinde en sık kullanılan araçlar arasındadır.
 Bir fonsiyonun adresini asterix (&) kullanarak gösterebiliriz. 
 
-int func(int, int);
-int (*fptr)(int, int);
+```int func(int, int);
+int (*fptr)(int, int);```
           
-fptr değişkenine func fonksiyonunun adresi ilk değer olarak verilebilir ya da atanabilir
+```fptr``` değişkenine ```func``` fonksiyonunun adresi ilk değer olarak verilebilir ya da atanabilir
 
-fptr = &func;
+```fptr = &func;```
 
 Fonksiyon isimlerinin derleyici tarafından fonksiyonların adreslerine dönüştürülmesinden faydalanarak bu atama deyimi aşağıdaki gibi de yazılabilirdi:
 
-fptr = func;
+```fptr = func;```
 
           
-func(10, 20)
+```func(10, 20)```
 
 Burada fonksiyon çağrı operatörünün terimi func adresidir. Operatör, func adresinde bulunan kodu, yani func fonksiyonunun kodunu çalıştırır. Fonksiyon çağrı operatörünün ürettiği değer çağrılan fonksiyonun geri dönüş değeridir. Örneğin:
 
-int result = strcmp(s1, s2);
+```int result = strcmp(s1, s2);```
 
 Burada strcmp ifadesinin türü, geri dönüş değeri int parametreleri (const char *, const char *) olan bir fonksiyon adresidir. Yani strcmp ifadesi
 
-int (*)(const char *, const char *)
+``` int (*)(const char *, const char *)```  
 
-türüne dönüştürülür.
-          
-          
-          
+türüne dönüştürülür.  
           
 
 ### GELECEK KONULAR
