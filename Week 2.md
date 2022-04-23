@@ -1,19 +1,19 @@
 # Weekly-C++
 
 
-Desing Pattern Nedir?
+### Desing Pattern Nedir?
 
 Bu terimi “Tasarım Kalıpları”, “Tasarım Şablonları”, “Tasarım Örüntüleri” gibi farklı isimlerle görebilirsiniz. Tasarım kalıpları, yazılım geliştiricilerin yazılım geliştirme sırasında karşılaştıkları genel sorunların çözümüdür. Bu çözümler, uzun bir süre boyunca sayısız yazılım geliştirici tarafından deneme yanılma yoluyla elde edilmiştir.
 
 Yaratılış kalıpları, nesneleri doğrudan oluşturmanıza değil, sizin için nesneler yaratan kalıplardır. Bu, belirli bir durum için hangi nesnelerin yaratılması gerektiğine karar vermede programınıza daha fazla esneklik sağlar. Tasarım kalıpları bir algoritma ya da kod değildir. Ayrıca belli dile özgü değildir, dilden bağımsızdır. Genellikle nesneler arası ilişkileri UML diyagramları ile gösteririz, bu sayede yazılımcılar arasında ortak bir iletişim dili oluşmuş olur. Belli bir tasarımı istediğiniz dille yazdığınız bir projeye kolaylıyla uygulayabilirsiniz. Tabi burada bir yanlış anlaşılmayı gidermekte fayda var. Neredeyse tüm Türkçe kaynaklarda tasarım kalıplarını OOP(Nesne Tabanlı Programlama) ile sınırlandırmışlar. Ancak Tasarım Kalıpları, dilden ve programlama paradigmalarından bağımsızdır.
 
-Tasarım Kalıpları Çeşitleri Nelerdir?
+### Tasarım Kalıpları Çeşitleri Nelerdir?
 
     Creational Patterns (Yaratımsal Kalıplar)
     Structural Patterns (Yapısal Kalıplar)
     Behavioral Patterns (Davranışsal Kalıplar)
 
-Creational (Yaratılış) Kalıbı Nedir?
+### Creational (Yaratılış) Kalıbı Nedir?
 
 Yaratılış kalıpları, nesneleri doğrudan oluşturmanıza değil, sizin için nesneler yaratan kalıplardır. Bu, belirli bir durum için hangi nesnelerin yaratılması gerektiğine karar vermede programınıza daha fazla esneklik sağlar.
 
@@ -23,7 +23,7 @@ Yaratılış kalıpları, nesneleri doğrudan oluşturmanıza değil, sizin içi
     Builder pattern, karmaşık nesneler inşa eder.
     Prototype pattern, mevcut bir nesneyi klonlayarak nesneler oluşturur.
 
-enum class?
+### enum class?
 
 Numaralandırma sınıfı türlerinin kendi kapsamları var ve tanıtılan numaralandırma sabitleri numaralandırma sınıfının kendi kapsamında yer alır.
 
@@ -46,7 +46,7 @@ void DrawText(Color currentColor);
 
 // Daha sonra ilgili enumun kullanılacağı yerde enum tipi tanımlanır
 
-Tür dönüştürme operatörleri nelerdir?
+### Tür dönüştürme operatörleri nelerdir?
 
     static_cast<> operatörü
     const_cast<> operatörü
@@ -69,7 +69,7 @@ reinterpret_cast<> operatörü
 
 Her türlü gösterici türünü her türlü gösterici türüne çevirebilir. Bilinçsiz kullanımı kesinlikle tavsiye edilmez. Aslında basit olarak göstericinin diğer göstericiye binary olarak kopyalanmasıdır. Hash fonksiyonlarında pratiklik açısından adres olarak kullanılan alanı hash değerine çevirmek için kullanılır. Kullanım alanları oldukça kısıtlıdır.
 
-Storage Class nedir?
+### Storage Class nedir?
 
 Storage class yapıları: bir fonksiyonun veya değişkenin tanımlanması esnasında, onun amacını, görünürlüğünü ve bellekten ne zaman silineceğini belirten anahtar kelimelerdir. C++ programlama dilinde 5 tane storage class anahtar kelimesi bulunmaktadır: auto, register, extern, static, mutable.
 
