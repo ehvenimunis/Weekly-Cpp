@@ -1,4 +1,4 @@
-# Weekly-C++-2
+# Weekly-C++
 
 
 ### Desing Pattern Nedir?
@@ -27,7 +27,7 @@ Yaratılış kalıpları, nesneleri doğrudan oluşturmanıza değil, sizin içi
 
 Numaralandırma sınıfı türlerinin kendi kapsamları var ve tanıtılan numaralandırma sabitleri numaralandırma sınıfının kendi kapsamında yer alır.
 
-// class kelimesine dikkat enum ile birlikte kullanılacaktır
+<pre><code>// class kelimesine dikkat enum ile birlikte kullanılacaktır
 enum class Color {NONE, RED, GREEN, BLUE}; 
 enum class Alert {NONE, GREEN, YELLOW, RED};
 
@@ -44,7 +44,7 @@ if (Color::RED == currentColor)
 enum class Color; // Forward declaration
 void DrawText(Color currentColor);
 
-// Daha sonra ilgili enumun kullanılacağı yerde enum tipi tanımlanır
+// Daha sonra ilgili enumun kullanılacağı yerde enum tipi tanımlanır</code></pre>
 
 ### Tür dönüştürme operatörleri nelerdir?
 
@@ -83,7 +83,7 @@ static ile tanımlanan bir değişkene programın her yerinden erişilebilir ve 
 
 mutable ile cons olarak tanımlanan bir sınıfın içerisinde barındırılan bir değişkenin değiştirilmesine izin verilir. İlgili değişken mutable olarak tanımlanır. Bu sayede herhangi bir değerinin değiştirilmemesi gereken bir sınıfı const olarak tanımlarız ama içerisinde değişmesini istediğimiz bir değişken olursa mutable olarak tanımlarız ve değiştirilmesine olanak tanımış oluruz.
 
-#include <iostream>
+<pre><code>#include <iostream>
 using std::cout;
 
 class Test {
@@ -120,7 +120,7 @@ int main()
 /*
 Output: 
 20
-*/
+*/</code></pre>
 
 
           
