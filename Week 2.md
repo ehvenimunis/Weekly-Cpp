@@ -1,4 +1,4 @@
-# Weekly-C++
+# Weekly-C++-2
 
 
 ### Desing Pattern Nedir?
